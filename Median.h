@@ -4,7 +4,9 @@
 #include "QuickSort.h"
 
 namespace filters {
-
+        /*
+	* Класс, реализующий медианную фильтрацию
+	*/
 	class Median :public Filter {
 	protected:
 		/*
