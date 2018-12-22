@@ -1,6 +1,7 @@
 #pragma once
 #include <atlimage.h>
 #include "Filter.h"
+#include "QuickSort.h"
 
 namespace filters {
 
