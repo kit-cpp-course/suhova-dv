@@ -6,9 +6,27 @@ namespace filters {
 
 	class Median :public Filter {
 	protected:
-		COLORREF * * Arrarator(HDC hdc, size_t X, size_t Y);
+		/*
+		* Параметры изображения:
+		* p - половина ширины окна фильтра
+		* size - размер окна фильтра
+		* mediana - индекс медианы в массиве окна
+		*/
+		size_t p = 0, size = 0, mediana = 0;
+		/*
+		* Возвращет массив цветов исходного изображения
+		*/
+		COLORREF * * const Arrarator(HDC hdc, size_t X, size_t Y);
+		/* 
+		* Заменяет цвет пикселя изображения hdc с координами [i,j] на медианный
+                */
+		void Window(HDC hdc, int i, int j, COLORREF** const arr);
 	public:
-		Median() {};
+		/* 
+		* Обрабатывает исходное изображение CImage img медианным фильтром.
+		* size_t p - мощность фильтрации (размер окна фильтра)
+		* LPCSTR output - путь сохранения результата
+		*/
 		void filtration(CImage img, size_t p, LPCSTR output);
 	};
 
