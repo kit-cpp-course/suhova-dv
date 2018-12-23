@@ -7,37 +7,37 @@ namespace cmd {
 	class arguments;
 }
 /*
-* Singleton класс для хранения аргументов программы
+* Singleton РєР»Р°СЃСЃ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ Р°СЂРіСѓРјРµРЅС‚РѕРІ РїСЂРѕРіСЂР°РјРјС‹
 */
 class config {
 	friend class cmd::arguments;
 	static config m_instance;
-	LPCSTR m_input; // адрес исходного изображения
-	LPCSTR m_output; // путь сохранения
-	size_t m_power; // мощность фильтрации
+	LPCSTR m_input; // Р°РґСЂРµСЃ РёСЃС…РѕРґРЅРѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
+	LPCSTR m_output; // РїСѓС‚СЊ СЃРѕС…СЂР°РЅРµРЅРёСЏ
+	size_t m_power; // РјРѕС‰РЅРѕСЃС‚СЊ С„РёР»СЊС‚СЂР°С†РёРё
 
 	config() {};
 public:
 	/*
-	* Возвращает конфигурации
+	* Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕРЅС„РёРіСѓСЂР°С†РёРё
 	*/
 	static config & instance() {
 		return m_instance;
 	}
 	/*
-	* Возвращает адрес исходного изображения
+	* Р’РѕР·РІСЂР°С‰Р°РµС‚ Р°РґСЂРµСЃ РёСЃС…РѕРґРЅРѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
 	*/
 	const LPCSTR & input() const {
 		return m_input;
 	}
 	/*
-	* Возвращает путь сохранения
+	* Р’РѕР·РІСЂР°С‰Р°РµС‚ РїСѓС‚СЊ СЃРѕС…СЂР°РЅРµРЅРёСЏ
 	*/
 	const LPCSTR & output() const {
 		return m_output;
 	}
 	/*
-	* Возвращает мощность фильтрации
+	* Р’РѕР·РІСЂР°С‰Р°РµС‚ РјРѕС‰РЅРѕСЃС‚СЊ С„РёР»СЊС‚СЂР°С†РёРё
 	*/
 	const size_t & power() const {
 		return m_power;
