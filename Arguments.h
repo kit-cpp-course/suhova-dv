@@ -19,7 +19,7 @@ namespace cmd {
 		LPCSTR check_input() const {
 		string in = args[1];
 			ifstream f(args[1]);
-			if (!f.good() && !regex_match(in.begin(), in.end(), regex{ R"([^\s]+((jpg|png|gif|bmp))$)" }))
+			if (!f.good() || !regex_match(in.begin(), in.end(), regex{ R"([^\s]+((jpg|png|gif|bmp))$)" }))
 			{
 				cout << endl << "Error." << endl;
 				system("pause");
